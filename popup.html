@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>X Human Typer</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>X Human Typer</h1>
+    <span id="count" class="muted">0 chars</span>
+  </header>
+
+  <textarea id="text" placeholder="Paste your post here…" spellcheck="false"></textarea>
+
+  <div class="row">
+    <label for="wpm">Speed</label>
+    <input id="wpm" type="range" min="20" max="120" step="5" />
+    <span id="wpmLabel" class="value"></span>
+  </div>
+
+  <div class="row">
+    <label for="typos">Typos</label>
+    <select id="typos">
+      <option value="0">None</option>
+      <option value="0.01">Few (1%)</option>
+      <option value="0.025">Normal (2.5%)</option>
+      <option value="0.05">Sloppy (5%)</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <label for="pauses">Thinking pauses</label>
+    <input id="pauses" type="checkbox" />
+  </div>
+
+  <p id="estimate" class="muted"></p>
+
+  <div class="buttons">
+    <button id="start" class="primary">Start typing</button>
+    <button id="stop" class="secondary" hidden>Stop</button>
+  </div>
+
+  <div id="statusBox" hidden>
+    <div class="bar"><div id="barFill"></div></div>
+    <p id="status"></p>
+  </div>
+
+  <p class="hint muted">
+    Open the post composer on x.com first. The popup closes when typing starts.
+    Press <kbd>Esc</kbd> on the page to stop. Nothing is posted for you.
+  </p>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
